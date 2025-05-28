@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Management Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .company-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-bar {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            width: 200px;
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tasks-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .button {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .primary-button {
+            background: black;
+            color: white;
+            border: none;
+        }
+
+        .secondary-button {
+            background: white;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .task-management {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .task-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .filter-button.active {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <select class="company-select">
+                <option>Company name</option>
+            </select>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">Members</a>
+                <a href="#">Payroll</a>
+                <a href="#">Schedule</a>
+                <a href="#">PIT</a>
+                <a href="#">VSS</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <input type="search" placeholder="Search or mention" class="search-bar">
+            <div class="user-profile">👤</div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="tasks-header">
+            <div>
+                <h1 class="section-title">Upcoming Tasks</h1>
+                <p>Stay on top of your responsibilities.</p>
+            </div>
+            <div>
+                <button class="button secondary-button">View All Tasks</button>
+                <button class="button primary-button">Add Task</button>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3 class="card-title">Performance Reviews</h3>
+                <p class="card-subtitle">Due Next Week</p>
+                <p>All teams</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3 class="card-title">Salary Review</h3>
+                <p class="card-subtitle">Due Next Month</p>
+                <p>All employees</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <h3 class="card-title">Onboarding New Employees</h3>
+                <p class="card-subtitle">Ongoing</p>
+                <p class="card-footer">Start date: Monday</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎉</div>
+                <h3 class="card-title">Team Team-Building Event</h3>
+                <p class="card-subtitle">In Two Days</p>
+                <p class="card-footer">Be there!</p>
+            </div>
+        </div>
+
+        <div class="task-management">
+            <h2 class="section-title">Task Management</h2>
+            <p>Stay on top of your tasks.</p>
+            
+            <div class="tasks-header">
+                <div class="task-filters">
+                    <button class="filter-button active">All tasks</button>
+                    <button class="filter-button">Completed</button>
+                    <button class="filter-button">Pending</button>
+                </div>
+                <div>
+                    <button class="button secondary-button">Manage Tasks</button>
+                    <button class="button primary-button">Add New Task</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
